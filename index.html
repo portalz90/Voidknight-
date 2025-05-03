@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="window.location.href='#'">Button 1</button>
+        <button onclick="window.location.href='#'">Button 2</button>
+        <button onclick="window.location.href='#'">Button 3</button>
+        <button onclick="window.location.href='#'">Button 4</button>
+        <button onclick="window.location.href='#'">Button 5</button>
+        <button onclick="window.location.href='#'">Button 6</button>
+        <button onclick="window.location.href='#'">Button 7</button>
+        <button onclick="window.location.href='#'">Button 8</button>
+    </div>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD1YgjFsxh-xZfeHlrxt_0igmH6SBIMcuc", 
+            authDomain: "void-d9ec4.firebaseapp.com",
+            databaseURL: "https://void-d9ec4-default-rtdb.firebaseio.com",
+            projectId: "void-d9ec4",
+            storageBucket: "void-d9ec4.firebasestorage.app",
+            messagingSenderId: "267268035851",
+            appId: "1:267268035851:web:9a4177f88a99703c0f3e0e",
+            measurementId: "G-VN001HWH1R"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+
+        // Example: Firebase Authentication (Check if user is logged in)
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                console.log("User is signed in: ", user);
+            } else {
+                console.log("No user is signed in.");
+            }
+        });
+    </script>
+</body>
+</html>
